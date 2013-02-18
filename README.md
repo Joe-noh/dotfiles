@@ -1,4 +1,5 @@
 dotfiles
 ========
 
-setting files
+.emacs & .vimrc are here.
+
