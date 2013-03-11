@@ -1,32 +1,57 @@
+; init.el
+
+; References
+;  http://d.hatena.ne.jp/sandai/20120304
+;  https://bitbucket.org/sakito/dot.emacs.d/src
+
 (load (expand-file-name (concat (getenv "HOME") "/.emacs.d/first_of_all")))
 
-;== General Settings =========
+;== 一般設定 ====================================================
+(require 'cl)  ; common-lispをエミュレート
+
+;--- 表示 --------------------------------------------
 (setq inhibit-startup-message t)
+(setq line-number-mode t)
 (setq column-number-mode t)
-(setq transient-mark-mode t)
 (menu-bar-mode -1)
+(setq-default line-spaceing 0)
+
+(split-window-horizontally)
+(other-window 1)
+(split-window-vertically)
+(eshell)
+(other-window 2)
+
+(require 'color-theme nil t)
+(color-theme-initialize)
+(color-theme-joe-noh)
+
+(setq ps-multibyte-buffer 'non-latin-printer)
+(setq ps-print-header nil)
+;-----------------------------------------------------
+
+;--- 編集 --------------------------------------------
+(prefer-coding-system 'utf-8)
+(setq transient-mark-mode t)
+
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 (setq shell-ask-to-save-history (quote always))
-;=============================
+(savehist-mode 1)
+
+(fset 'yes-or-no-p 'y-or-n-p)
+;-----------------------------------------------------
+;================================================================
 
 
-;;; Perl settng
-(require 'cl)
-(autoload 'perltidy "perltidy-mode" nil t)
+;== 言語設定 ====================================================
+;--- Perl --------------------------------------------
+(autoload 'perltidy      "perltidy-mode" nil t)
 (autoload 'perltidy-mode "perltidy-mode" nil t)
-(eval-after-load "cperl-mode"
-  '(add-hook 'cperl-mode-hook 'perltidy-mode))
-(eval-after-load "perl-mode"
-  '(add-hook 'perl-mode-hook 'perltidy-mode))
+(eval-after-load "cperl-mode" '(add-hook 'cperl-mode-hook 'perltidy-mode))
+(eval-after-load  "perl-mode" '(add-hook  'perl-mode-hook 'perltidy-mode))
+;-----------------------------------------------------
 
-
-;;; Ruby Setting
-;(require 'rinari)
-;(require 'ruby-block)
-;(require 'ruby-electric)
-
-
-;;; Scala Setting
+;--- Scala -------------------------------------------
 (require 'ensime)
 (require 'scala-mode2)
 (add-hook 'scala-mode-hook
@@ -34,8 +59,9 @@
     (setq scala-indent:align-parameters t)
     (setq scala-indent:align-forms      t))
   'ensime-scala-mode-hook)
+;-----------------------------------------------------
 
-;;; C Setting
+;--- C -----------------------------------------------
 (add-hook 'c-mode-hook
   '(lambda()
     (c-set-style "k&r")
@@ -43,9 +69,9 @@
     (setq indent-tabs-mode nil)
     (setq c-auto-newline nil)
     (local-set-key (kbd "RET") 'reindent-then-newline-and-indent)))
+;-----------------------------------------------------
 
-
-;;; YaTeX Setting
+;--- TeX ---------------------------------------------
 (autoload 'yatex-mode "yatex" "Yet Another LaTeX mode" t)
 (setq auto-mode-alist (append
   '(("\\.tex$" . yatex-mode)
@@ -54,9 +80,9 @@
     ("\\.sty$" . yatex-mode)
     ("\\.clo$" . yatex-mode)
     ("\\.bbl$" . yatex-mode)) auto-mode-alist))
+;-----------------------------------------------------
 
-
-;;; ReST Setting
+;--- ReST --------------------------------------------
 (require 'rst)
 (setq auto-mode-alist (append
   '(("\\.rst$"  . rst-mode)
@@ -73,44 +99,30 @@
    '(rst-level-2-face ((t  nil                                                   )) t)
    '(rst-level-3-face ((t (:background "grey16" :foreground "green" :weight bold))) t)
    '(rst-level-4-face ((t (:background "grey 9" :foreground "red"   :weight bold))) t)))
+;-----------------------------------------------------
+;================================================================
 
-;;; Usefuls
-(require 'ido)         ; Great Navigation
+
+;== 便利系 ======================================================
+(require 'ido)
 (ido-mode t)
 
-(require 'jaunte)      ; Travel Around Source Code
+(require 'jaunte)
 
-(require 'whitespace)  ; Visualize Redundant White Spaces
+(require 'whitespace)
 (setq whitespace-style '(face trailing space-before-tab space-after-tab))
 (global-whitespace-mode t)
 
-(require 'recentf)     ; Visit the Files opened before
+(require 'recentf)
 (setq recentf-mode t)
 (global-set-key [f12] 'recentf-open-files)
+;================================================================
 
-
-;;; Color Print Source Code
-(setq ps-multibyte-buffer 'non-latin-printer)
-(setq ps-print-header nil)
-
-
-;;; Split windows
-(split-window-horizontally)
-(other-window 1)
-(split-window-vertically)
-(eshell)
-(other-window 2)
-
-
-;;; Key binds
+;== キーバインド ================================================
 (global-set-key "\C-z" 'other-window)
 (global-set-key "\M-p" 'perltidy-mode)
 (global-set-key "\C-c\C-j" 'jaunte)
 (global-set-key "\C-x:" 'goto-line)
 (global-set-key "\C-c\C-l" 'toggle-truncate-lines)
 (global-set-key [f8] 'eshell)
-
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
+;================================================================
