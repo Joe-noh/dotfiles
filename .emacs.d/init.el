@@ -49,6 +49,7 @@
 (autoload 'perltidy-mode "perltidy-mode" nil t)
 (eval-after-load "cperl-mode" '(add-hook 'cperl-mode-hook 'perltidy-mode))
 (eval-after-load  "perl-mode" '(add-hook  'perl-mode-hook 'perltidy-mode))
+(global-set-key "\M-p" 'perltidy-mode)
 ;-----------------------------------------------------
 
 ;--- Scala -------------------------------------------
@@ -104,10 +105,20 @@
 
 
 ;== 便利系 ======================================================
+(require 'anything-startup nil t)
+(setq anything-c-filelist-file-name "/tmp/all.filelist")
+(global-set-key "\C-@" 'anything-filelist+)
+
+(require 'popwin)
+(setq anything-samewindow nil)
+(push '("*anything*" :height 20) popwin:special-display-config)
+(setq display-buffer-function 'popwin:display-buffer)
+
 (require 'ido)
 (ido-mode t)
 
 (require 'jaunte)
+(global-set-key "\C-c\C-j" 'jaunte)
 
 (require 'whitespace)
 (setq whitespace-style '(face trailing space-before-tab space-after-tab))
@@ -118,11 +129,17 @@
 (global-set-key [f12] 'recentf-open-files)
 ;================================================================
 
+;== 関数定義 ====================================================
+(defun update-anything-filelist ()
+  (interactive)
+  (save-window-excursion
+    (async-shell-command "sudo ruby ~/.emacs.d/script/contrib_make-filelist.rb > /tmp/all.filelist")))
+;================================================================
+
 ;== キーバインド ================================================
 (global-set-key "\C-z" 'other-window)
-(global-set-key "\M-p" 'perltidy-mode)
-(global-set-key "\C-c\C-j" 'jaunte)
 (global-set-key "\C-x:" 'goto-line)
 (global-set-key "\C-c\C-l" 'toggle-truncate-lines)
 (global-set-key [f8] 'eshell)
+;================================================================
 ;================================================================
