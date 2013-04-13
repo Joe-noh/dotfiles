@@ -107,7 +107,7 @@
 ;== 便利系 ======================================================
 (require 'anything-startup nil t)
 (setq anything-c-filelist-file-name "/tmp/all.filelist")
-(global-set-key "\C-@" 'anything-filelist+)
+(global-set-key "\C-\\" 'anything-filelist+)
 
 (require 'popwin)
 (setq anything-samewindow nil)
