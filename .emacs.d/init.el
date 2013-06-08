@@ -101,6 +101,14 @@
    '(rst-level-3-face ((t (:background "grey16" :foreground "green" :weight bold))) t)
    '(rst-level-4-face ((t (:background "grey 9" :foreground "red"   :weight bold))) t)))
 ;-----------------------------------------------------
+
+;--- HAML --------------------------------------------
+(require 'haml-mode)
+(add-hook 'haml-mode-hook
+  '(lambda ()
+     (setq indent-tabs-mode nil)
+     (define-key haml-mode-map "\C-m" 'newline-and-indent)))
+;-----------------------------------------------------
 ;================================================================
 
 
@@ -127,6 +135,10 @@
 (require 'recentf)
 (setq recentf-mode t)
 (global-set-key [f12] 'recentf-open-files)
+
+(require 'ag)
+(setq ag-highlight-search t)
+(global-set-key [f6] 'ag)
 ;================================================================
 
 ;== 関数定義 ====================================================
