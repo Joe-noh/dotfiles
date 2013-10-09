@@ -2,7 +2,7 @@
 
 ;== とりあえずauto-install動かしたい ===========================
 ;--- パス --------------------------------------------
-(let ((default-directory "~/.emacs.d/elisp/"))
+(let ((default-directory "~/Dropbox/elisp/"))
   (setq load-path (cons default-directory load-path))
   (normal-top-level-add-subdirs-to-load-path))
 ;-----------------------------------------------------
