@@ -145,12 +145,12 @@
 
  -guess_indent	Guess indent character (tab or space).
 
--menu_above	Position menu/list above prompt when enabled.  Otherwise position
+ -menu_above	Position menu/list above prompt when enabled.  Otherwise position
 		below prompt.
 
 -transpose	Transpose rows with columns in all menus.
 
- -menu_explorer	Stay in menu system when a directory is selected (otherwise
+-menu_explorer	Stay in menu system when a directory is selected (otherwise
                 directory is added to path and menu is closed).
 
  -menu_jump	Jump into file selection menu when tab is hit (otherwise, menu
@@ -174,7 +174,7 @@
 		mouse can be pasted into other application, and middle
 		button clicks paste into JOE).
 
--square	Rectangular block mode
+ -square	Rectangular block mode
 
  -text_color color
 		Set color for text.
@@ -269,7 +269,7 @@
 
 -highlight		Enable highlighting
 
-	-smarthome		Home key first moves cursor to beginning of line,
+-smarthome		Home key first moves cursor to beginning of line,
 				then if hit again, to first non-blank character.
 
 	-indentfirst		Smart home goes to first non-blank character first,
@@ -285,20 +285,20 @@
 
 -istep 2		Number of indentation columns
 
-	-spaces			TAB inserts spaces instead of tabs.
+-spaces			TAB inserts spaces instead of tabs.
 
-	-purify			Fix indentation if necessary for rindent, lindent and backs
+-purify			Fix indentation if necessary for rindent, lindent and backs
 				(for example if indentation uses a mix of tabs and spaces,
 				and indentc is space, indentation will be converted to all
 				spaces).
 
-	-crlf			File uses CR-LF at ends of lines
+-crlf			File uses CR-LF at ends of lines
 
 	-wordwrap		Wordwrap
 
 	-nobackup		If you don't want backup file to be created
 
-	-autoindent		Auto indent
+-autoindent		Auto indent
 
 	-overwrite		Overtype mode
 
