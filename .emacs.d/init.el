@@ -22,9 +22,9 @@
 (eshell)
 (other-window 2)
 
-(require 'color-theme nil t)
-(color-theme-initialize)
-(color-theme-joe-noh)
+;(require 'color-theme nil t)
+;(color-theme-initialize)
+;(color-theme-joe-noh)
 
 (setq ps-multibyte-buffer 'non-latin-printer)
 (setq ps-print-header nil)
@@ -48,34 +48,6 @@
 
 
 ;== 言語設定 ====================================================
-;--- Perl --------------------------------------------
-(autoload 'perltidy      "perltidy-mode" nil t)
-(autoload 'perltidy-mode "perltidy-mode" nil t)
-(eval-after-load "cperl-mode" '(add-hook 'cperl-mode-hook 'perltidy-mode))
-(eval-after-load  "perl-mode" '(add-hook  'perl-mode-hook 'perltidy-mode))
-(global-set-key "\M-p" 'perltidy-mode)
-;-----------------------------------------------------
-
-;--- Scala -------------------------------------------
-(require 'ensime)
-(require 'scala-mode2)
-(add-hook 'scala-mode-hook
-  '(lambda()
-    (setq scala-indent:align-parameters t)
-    (setq scala-indent:align-forms      t))
-  'ensime-scala-mode-hook)
-;-----------------------------------------------------
-
-;--- C -----------------------------------------------
-(add-hook 'c-mode-hook
-  '(lambda()
-    (c-set-style "k&r")
-    (setq c-basic-offset 4)
-    (setq indent-tabs-mode nil)
-    (setq c-auto-newline nil)
-    (local-set-key (kbd "RET") 'reindent-then-newline-and-indent)))
-;-----------------------------------------------------
-
 ;--- TeX ---------------------------------------------
 (autoload 'yatex-mode "yatex" "Yet Another LaTeX mode" t)
 (setq auto-mode-alist (append
@@ -85,7 +57,14 @@
     ("\\.sty$" . yatex-mode)
     ("\\.clo$" . yatex-mode)
     ("\\.bbl$" . yatex-mode)) auto-mode-alist))
+(add-hook 'yatex-mode-hook
+  '(lambda()
+    (auto-fill-mode nil)))
 ;-----------------------------------------------------
+
+;--- PHP ---------------------------------------------
+(require 'php-mode)
+;----------------------------------------------------
 
 ;--- ReST --------------------------------------------
 (require 'rst)
@@ -117,9 +96,9 @@
 
 
 ;== 便利系 ======================================================
-(require 'anything-startup nil t)
-(setq anything-c-filelist-file-name "/tmp/all.filelist")
-(global-set-key "\C-\\" 'anything-filelist+)
+;(require 'anything-startup nil t)
+;(setq anything-c-filelist-file-name "/tmp/all.filelist")
+;(global-set-key "\C-\\" 'anything-filelist+)
 
 (require 'popwin)
 (setq anything-samewindow nil)

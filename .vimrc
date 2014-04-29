@@ -77,20 +77,6 @@ nnoremap <c-h> <c-w>h
 "=== NeoBundle ===============
 filetype off
 
-if has('vim_starting')
-  set runtimepath+=~/.vim/bundle/neobundle.vim
-  call neobundle#rc(expand('~/.vim/bundle/'))
-endif
-
-NeoBundle 'Shougo/neobundle.vim'
-NeoBundle 'Shougo/vimproc'
-NeoBundle 'Shougo/vimshell'
-NeoBundle 'Shougo/unite.vim'
-NeoBundle 'Shougo/neocomplcache'
-NeoBundle 'Shougo/neosnippet'
-NeoBundle 'jpalardy/vim-slime'
-NeoBundle 'scrooloose/syntastic'
-
 syntax on
 filetype indent on
 filetype plugin indent on
@@ -100,22 +86,6 @@ filetype plugin indent on
 "== Ruby =====================
 compiler ruby
 let ruby_space_errors = 1
-
-" 補完
-set infercase
-
-let g:neocomplcache_enable_at_startup = 1
-
-"let g:neocomplcache_force_overwrite_completefunc = 1
-"let g:neocomplcache#sources#rsense#home_directory = expand('~/.bundle/rsense-0.3')
-"let g:neocomplcache_enable_camel_case_completion = 1
-"let g:neocomplcache_enable_underbar_completion = 1
-"let g:neocomplcache_skip_auto_completion_time = '0.3'
-
-"imap <expr><C-g> neocomplcache#undo_completion()
-"imap <expr><CR> neocomplcache#smart_close_popup()
-imap <silent><expr><S-TAB> pumvisible() ? "\<C-P>" : "\<S-TAB>"
-imap <expr><TAB> neosnippet#expandable() ? "\<Plug>(neosnippet_jump_or_expand)" : pumvisible() ? "\<C-n>" : "\<TAB>"
 "============================
 
 
