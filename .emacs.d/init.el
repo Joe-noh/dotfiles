@@ -109,13 +109,9 @@
 
 
 ;== 便利系 ======================================================
-;(require 'anything-startup nil t)
-;(setq anything-c-filelist-file-name "/tmp/all.filelist")
-;(global-set-key "\C-\\" 'anything-filelist+)
-
 (require 'popwin)
-(setq anything-samewindow nil)
-(push '("*anything*" :height 20) popwin:special-display-config)
+;(setq anything-samewindow nil)
+;(push '("*anything*" :height 20) popwin:special-display-config)
 (setq display-buffer-function 'popwin:display-buffer)
 
 (require 'ido)
@@ -137,12 +133,6 @@
 (global-set-key [f6] 'ag)
 ;================================================================
 
-;== 関数定義 ====================================================
-(defun update-anything-filelist ()
-  (interactive)
-  (save-window-excursion
-    (async-shell-command "sudo ruby ~/.emacs.d/script/contrib_make-filelist.rb > /tmp/all.filelist")))
-;================================================================
 
 ;== キーバインド ================================================
 (global-set-key "\C-z" 'other-window)
