@@ -24,7 +24,7 @@ if $COLORTERM == 'gnome-terminal'
 endif
 
 set nowrap
-set title
+set notitle
 set number
 set showcmd
 set hlsearch
