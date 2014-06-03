@@ -22,10 +22,6 @@
 (eshell)
 (other-window 2)
 
-;(require 'color-theme nil t)
-;(color-theme-initialize)
-;(color-theme-joe-noh)
-
 (setq ps-multibyte-buffer 'non-latin-printer)
 (setq ps-print-header nil)
 
