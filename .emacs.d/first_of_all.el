@@ -1,6 +1,6 @@
 ; first_of_all.el
 
-;== とりあえずauto-install動かしたい ===========================
+;== とりあえずauto-installとpackage動かしたい ===========================
 ;--- パス --------------------------------------------
 (let ((default-directory "~/Dropbox/elisp/"))
   (setq load-path (cons default-directory load-path))

@@ -55,6 +55,13 @@
 (require 'ruby-block)
 (ruby-block-mode t)
 (setq ruby-block-highlight-toggle t)
+
+;-- Rails ---------
+(require 'rinari)
+
+(require 'rhtml-mode)
+(add-hook 'rhtml-mode-hook (lambda () (rinari-launch)))
+;------------------
 ;-----------------------------------------------------
 
 ;--- TeX ---------------------------------------------
@@ -106,8 +113,6 @@
 
 ;== 便利系 ======================================================
 (require 'popwin)
-;(setq anything-samewindow nil)
-;(push '("*anything*" :height 20) popwin:special-display-config)
 (setq display-buffer-function 'popwin:display-buffer)
 
 (require 'ido)
