@@ -103,6 +103,9 @@
 
 ;--- HAML --------------------------------------------
 (require 'haml-mode)
+(setq auto-mode-alist (append
+  '(("\\.haml$" . haml-mode)
+    ("\\.hamlbars$" . haml-mode)) auto-mode-alist))
 (add-hook 'haml-mode-hook
   '(lambda ()
      (setq indent-tabs-mode nil)
