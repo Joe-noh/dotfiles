@@ -177,7 +177,12 @@
                         ;; '^' is a pattern for basename
                         ;; and not required because the directory name is prepended
                         (substring input-pattern 1)
-                      (concat ".*" input-pattern)))))))
+                      (concat ".*" input-pattern))))))
+
+  (custom-set-faces
+    '(helm-buffer-directory ((t (:foreground "Blue" :weight bold))))
+    '(helm-ff-directory ((t (:foreground "Blue" :weight bold))))
+    '(helm-ff-file ((t nil)))))
 ;================================================================
 
 
