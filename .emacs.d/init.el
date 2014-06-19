@@ -111,6 +111,15 @@
      (setq indent-tabs-mode nil)
      (define-key haml-mode-map "\C-m" 'newline-and-indent)))
 ;-----------------------------------------------------
+
+;--- Coffee ------------------------------------------
+(defun coffee-custom () "coffee-mode-hook"
+  (and (set (make-local-variable 'tab-width) 2)
+       (set (make-local-variable 'coffee-tab-width) 2)))
+
+(add-hook 'coffee-mode-hook
+  '(lambda() (coffee-custom)))
+;-----------------------------------------------------
 ;================================================================
 
 
