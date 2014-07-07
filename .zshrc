@@ -7,17 +7,20 @@ ZSH_THEME="wezm+"
 # (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git autojump encode64)
+plugins=(git autojump encode64 ruby rails bundle gem rbenv)
 
 source $ZSH/oh-my-zsh.sh
 
-# Customize to your needs...
+setopt no_beep
+setopt no_correct
 
 unsetopt share_history
 
 alias emacs="emacs -nw"
+alias be="bundle exec"
 
 export TERM=xterm-256color
-
-# Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+export PATH="$HOME/.rbenv/bin:$PATH"
+
+eval "$(rbenv init -)"
