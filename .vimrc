@@ -74,11 +74,10 @@ nnoremap <c-h> <c-w>h
 "=============================
 
 
-"=== NeoBundle ===============
-filetype off
+"=== pathogen ================
+execute pathogen#infect()
 
 syntax on
-filetype indent on
 filetype plugin indent on
 "=============================
 
