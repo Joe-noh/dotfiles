@@ -1,0 +1,13 @@
+[user]
+	name = Joe-noh
+	email = goflb.jh@gmail.com
+[alias]
+  st = status -sb
+  ci = commit
+  co = checkout
+[url "git@github.com:Joe-noh"]
+  pushInsteadOf = https://github.com/Joe-noh
+[url "git@github.com:"]
+  insteadOf = https://github.com/
+[ghq]
+	root = ~/Documents/src
