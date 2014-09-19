@@ -20,6 +20,8 @@ alias emacs="emacs -nw"
 alias be="bundle exec"
 
 export TERM=xterm-256color
+export GOPATH="$HOME/Documents"
+export PATH="$GOPATH/bin:$PATH"
 export PATH="/usr/local/heroku/bin:$PATH"
 export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH="$HOME/.exenv/bin:$PATH"
@@ -27,3 +29,5 @@ export PATH="$HOME/.nodebrew/current/bin:$PATH"
 
 eval "$(rbenv init -)"
 eval "$(exenv init -)"
+
+cd "$GOPATH/src/github.com"

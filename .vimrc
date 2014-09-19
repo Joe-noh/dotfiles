@@ -55,6 +55,8 @@ set expandtab
 set smarttab
 set smartindent
 
+set backspace=indent,eol,start
+
 " 保存時に行末の空白を削除
 function! s:remove_dust()
   let cursor = getpos(".")

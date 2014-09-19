@@ -203,5 +203,8 @@
 (global-set-key "\C-x:" 'goto-line)
 (global-set-key "\C-c\C-l" 'toggle-truncate-lines)
 (global-set-key [f8] 'eshell)
+
+(when (eq system-type 'darwin)
+  (setq ns-command-modifier (quote meta)))
 ;================================================================
 ;================================================================
