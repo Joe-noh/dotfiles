@@ -112,6 +112,8 @@
 
 
 ;== 便利系 ======================================================
+(show-paren-mode 1)
+
 (require 'popwin)
 (setq helm-samewindow nil)
 (setq display-buffer-function 'popwin:display-buffer)
