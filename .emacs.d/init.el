@@ -39,6 +39,8 @@
 (savehist-mode 1)
 
 (fset 'yes-or-no-p 'y-or-n-p)
+
+(global-company-mode)
 ;-----------------------------------------------------
 ;================================================================
 
@@ -55,6 +57,10 @@
 (require 'ruby-block)
 (ruby-block-mode t)
 (setq ruby-block-highlight-toggle t)
+
+(add-hook 'ruby-mode-hook 'robe-mode)
+
+(push 'company-robe company-backends)
 
 ;-- Rails ---------
 (require 'rinari)
