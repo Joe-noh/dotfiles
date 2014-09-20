@@ -25,13 +25,17 @@
 (add-to-list 'auto-mode-alist '("Capfile$" . enh-ruby-mode))
 (add-to-list 'auto-mode-alist '("Gemfile$" . enh-ruby-mode))
 
-(require 'ruby-electric)
-(add-hook 'ruby-mode-hook '(lambda () (ruby-electric-mode t)))
-(setq ruby-electric-expand-delimiters-list nil)
-
+(require 'ruby-end)
 (require 'ruby-block)
-(ruby-block-mode t)
-(setq ruby-block-highlight-toggle t)
+(add-hook 'enh-ruby-mode-hook
+  '(lambda ()
+    (abbrev-mode 1)
+    (electric-pair-mode t)
+    (electric-indent-mode t)
+    (electric-layout-mode t)
+
+    (ruby-block-mode t)
+    (setq ruby-block-highlight-toggle t)))
 
 (add-hook 'enh-ruby-mode-hook 'robe-mode)
 (add-hook 'enh-ruby-mode-hook '(lambda ()
