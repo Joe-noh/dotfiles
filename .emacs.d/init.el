@@ -24,6 +24,7 @@
 ;--- Ruby --------------------------------------------
 (add-to-list 'auto-mode-alist '("Capfile$" . enh-ruby-mode))
 (add-to-list 'auto-mode-alist '("Gemfile$" . enh-ruby-mode))
+(add-to-list 'interpreter-mode-alist '("ruby" . enh-ruby-mode))
 
 (require 'ruby-end)
 (require 'ruby-block)
