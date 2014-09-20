@@ -6,30 +6,6 @@
 
 (load (expand-file-name (concat (getenv "HOME") "/.emacs.d/first_of_all")))
 
-;== 一般設定 ====================================================
-(require 'cl)  ; common-lispをエミュレート
-
-;--- 表示 --------------------------------------------
-(setq inhibit-startup-message t)
-(setq line-number-mode t)
-(setq column-number-mode t)
-(menu-bar-mode -1)
-(setq-default line-spaceing 0)
-
-(split-window-horizontally)
-(other-window 1)
-(split-window-vertically)
-(eshell)
-(other-window 2)
-
-(setq ps-multibyte-buffer 'non-latin-printer)
-(setq ps-print-header nil)
-
-(require 'linum)
-(global-linum-mode t)
-(setq linum-format "%5d|")
-;-----------------------------------------------------
-
 ;--- 編集 --------------------------------------------
 (prefer-coding-system 'utf-8)
 (setq transient-mark-mode t)
@@ -44,7 +20,6 @@
 ;-----------------------------------------------------
 ;================================================================
 
-
 ;== 言語設定 ====================================================
 ;--- Ruby --------------------------------------------
 (add-to-list 'auto-mode-alist '("Capfile$" . enh-ruby-mode))
@@ -58,9 +33,12 @@
 (ruby-block-mode t)
 (setq ruby-block-highlight-toggle t)
 
-(add-hook 'ruby-mode-hook 'robe-mode)
-
+(add-hook 'enh-ruby-mode-hook 'robe-mode)
+(add-hook 'enh-ruby-mode-hook '(lambda ()
+  (define-key enh-ruby-mode-map "\C-xj" 'robe-jump)))
 (push 'company-robe company-backends)
+
+(add-hook 'eshell-mode-hook '(lambda () (company-mode 0)))
 
 ;-- Rails ---------
 (require 'rinari)
@@ -213,4 +191,28 @@
 (when (eq system-type 'darwin)
   (setq ns-command-modifier (quote meta)))
 ;================================================================
+
+;== 一般設定 ====================================================
+(require 'cl)  ; common-lispをエミュレート
+
+;--- 表示 --------------------------------------------
+(setq inhibit-startup-message t)
+(setq line-number-mode t)
+(setq column-number-mode t)
+(menu-bar-mode -1)
+(setq-default line-spaceing 0)
+
+(split-window-horizontally)
+(other-window 1)
+(split-window-vertically)
+(eshell)
+(other-window 2)
+
+(setq ps-multibyte-buffer 'non-latin-printer)
+(setq ps-print-header nil)
+
+(require 'linum)
+(global-linum-mode t)
+(setq linum-format "%5d|")
+;-----------------------------------------------------
 ;================================================================
