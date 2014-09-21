@@ -20,7 +20,7 @@ alias emacs="emacs -nw"
 alias be="bundle exec"
 
 export TERM=xterm-256color
-export GOPATH="$HOME/Documents"
+export GOPATH="$HOME/Workspace"
 export PATH="$GOPATH/bin:$PATH"
 export PATH="/usr/local/heroku/bin:$PATH"
 export PATH="$HOME/.rbenv/bin:$PATH"
@@ -57,3 +57,4 @@ function peco-src () {
 }
 zle -N peco-src
 bindkey '^]' peco-src
+
