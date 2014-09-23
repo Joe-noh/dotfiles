@@ -197,6 +197,8 @@
 (global-set-key "\C-c\C-l" 'toggle-truncate-lines)
 (global-set-key [f8] 'eshell)
 
+(global-set-key [backtab] 'company-complete)
+
 (when (eq system-type 'darwin)
   (setq ns-command-modifier (quote meta)))
 ;================================================================
