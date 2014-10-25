@@ -7,7 +7,7 @@ ZSH_THEME="wezm"
 # (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git autojump encode64 ruby rails bundle gem rbenv mix brew)
+plugins=(git autojump encode64 ruby rails bundle gem rbenv mix brew zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -29,6 +29,7 @@ export PATH="$HOME/.nodebrew/current/bin:$PATH"
 
 eval "$(rbenv init -)"
 eval "$(exenv init -)"
+. ~/.kerl/17.3/activate
 
 # zsh functions for ghq/peco
 setopt hist_ignore_all_dups
