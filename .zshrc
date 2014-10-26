@@ -31,6 +31,12 @@ eval "$(rbenv init -)"
 eval "$(exenv init -)"
 . ~/.kerl/17.3/activate
 
+ssh() {
+  tmux rename-window "$*"
+  command ssh "$@"
+  tmux rename-window "zsh"
+}
+
 # zsh functions for ghq/peco
 setopt hist_ignore_all_dups
 
