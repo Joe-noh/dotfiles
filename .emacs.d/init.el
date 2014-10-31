@@ -199,6 +199,9 @@
 
 (global-set-key [backtab] 'company-complete)
 
+; shift-upがselectになるのを防ぐ
+(define-key input-decode-map "\e[1;2A" [S-up])
+
 (when (eq system-type 'darwin)
   (setq ns-command-modifier (quote meta)))
 ;================================================================
