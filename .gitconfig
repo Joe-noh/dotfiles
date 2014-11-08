@@ -11,6 +11,7 @@
   pushInsteadOf = https://github.com/Joe-noh
 [url "git@github.com:"]
   insteadOf = https://github.com/
+  insteadOf = git://github.com/
 [ghq]
 	root = ~/Workspace/src
 [filter "media"]
