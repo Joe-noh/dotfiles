@@ -29,7 +29,7 @@ export PATH="$HOME/.nodebrew/current/bin:$PATH"
 
 eval "$(rbenv init -)"
 eval "$(exenv init -)"
-. ~/.kerl/17.3/activate
+. ~/.kerl/17.4/activate
 
 ssh() {
   tmux rename-window "$*"
