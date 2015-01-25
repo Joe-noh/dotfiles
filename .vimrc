@@ -66,12 +66,6 @@ let g:lightline = {
 set laststatus=2
 syntax enable
 
-set nowrap
-set notitle
-set number
-set showcmd
-set hlsearch
-
 set fileencodings=utf-8,euc-jp,iso-2022-jp,cp932
 set ambiwidth=double
 if &encoding == 'utf-8'
@@ -79,9 +73,17 @@ if &encoding == 'utf-8'
   match ZenkakuSpace /　/
 endif
 
+set nowrap
+set notitle
+set number
+set showcmd
+set incsearch
+set hlsearch
+set hidden
+
 set autoindent
 set tabstop=2
-set softtabstop=0
+set softtabstop=2
 set shiftwidth=2
 set expandtab
 set smarttab
@@ -103,4 +105,5 @@ nnoremap <c-k> <c-w>k
 nnoremap <c-l> <c-w>l
 nnoremap <c-h> <c-w>h
 
+filetype indent on
 filetype plugin on
