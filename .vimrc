@@ -32,6 +32,7 @@ NeoBundle 'rking/ag.vim'
 NeoBundle 'elixir-lang/vim-elixir'
 NeoBundle 'heartsentwined/vim-emblem'
 NeoBundle 'kchmck/vim-coffee-script'
+NeoBundle 'tpope/vim-haml'
 
 call neobundle#end()
 
