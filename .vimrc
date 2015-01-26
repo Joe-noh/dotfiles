@@ -6,14 +6,38 @@ set nocompatible
 filetype plugin indent off
 
 set autoread
+set nobackup
+
+set nowrap
+set notitle
+set number
+set showcmd
+set incsearch
+set hlsearch
 set hidden
-set backup
+
+set autoindent
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
+set expandtab
+set smarttab
+set smartindent
+
+set backspace=indent,eol,start
 
 set viminfo+=n~/.vim/.viminfo
 set backupdir=~/.vim/backup
 set noswapfile
 
 set whichwrap=b,s,h,l,<,>,[,]
+
+set fileencodings=utf-8,euc-jp,iso-2022-jp,cp932
+set ambiwidth=double
+if &encoding == 'utf-8'
+  highlight ZenkakuSpace cterm=underline ctermfg=lightblue
+  match ZenkakuSpace /　/
+endif
 
 set runtimepath+=~/.vim/bundle/neobundle.vim
 call neobundle#begin(expand('~/.vim/bundle'))
@@ -66,31 +90,6 @@ let g:lightline = {
 \}
 set laststatus=2
 syntax enable
-
-set fileencodings=utf-8,euc-jp,iso-2022-jp,cp932
-set ambiwidth=double
-if &encoding == 'utf-8'
-  highlight ZenkakuSpace cterm=underline ctermfg=lightblue
-  match ZenkakuSpace /　/
-endif
-
-set nowrap
-set notitle
-set number
-set showcmd
-set incsearch
-set hlsearch
-set hidden
-
-set autoindent
-set tabstop=2
-set softtabstop=2
-set shiftwidth=2
-set expandtab
-set smarttab
-set smartindent
-
-set backspace=indent,eol,start
 
 " 保存時に行末の空白を削除
 function! s:remove_dust()
