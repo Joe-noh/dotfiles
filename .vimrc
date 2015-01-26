@@ -27,7 +27,6 @@ set smartindent
 set backspace=indent,eol,start
 
 set viminfo+=n~/.vim/.viminfo
-set backupdir=~/.vim/backup
 set noswapfile
 
 set whichwrap=b,s,h,l,<,>,[,]
