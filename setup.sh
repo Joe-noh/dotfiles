@@ -1,18 +1,20 @@
 #!/bin/sh
 
-ln -s ./.zshrc ~/
+HERE=$(pwd)
 
-ln -s ./.tmux.conf ~/
+ln -s "$HERE/.zshrc" ~/
 
-ln -s ./.gitignore ~/
-ln -s ./.gitconfig ~/
+ln -s "$HERE/.tmux.conf" ~/
 
-ln -s ./.vimrc ~/
+ln -s "$HERE/.gitignore" ~/
+ln -s "$HERE/.gitconfig" ~/
+
+ln -s "$HERE/.vimrc" ~/
 
 if [ ! -f ~/.emacs.d ]; then
   mkdir ~/.emacs.d
 fi
 
-ln -s ./.emacs.d/init.el         ~/.emacs.d/
-ln -s ./.emacs.d/first_of_all.el ~/.emacs.d/
+ln -s "$HERE/.emacs.d/init.el"         ~/.emacs.d/
+ln -s "$HERE/.emacs.d/first_of_all.el" ~/.emacs.d/
 
