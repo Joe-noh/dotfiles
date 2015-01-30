@@ -51,6 +51,7 @@ NeoBundle 'Yggdroot/indentLine'
 NeoBundle 'Townk/vim-autoclose'
 NeoBundle 'mattn/emmet-vim'
 NeoBundle 'rking/ag.vim'
+NeoBundle 'tpope/vim-obsession.git'
 
 NeoBundle 'elixir-lang/vim-elixir'
 NeoBundle 'heartsentwined/vim-emblem'
