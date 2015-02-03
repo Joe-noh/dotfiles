@@ -64,6 +64,11 @@ call neobundle#end()
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0  && !exists("s:std_in") | NERDTree | endif
 
+let g:user_emmet_expandabbr_key = '<c-e>'
+let g:user_emmet_settings = {
+\  'indentation' : '  '
+\}
+
 colorscheme jellybeans
 if &term =~ 'xterm-256color' || 'screen-256color'
   set t_Co=256
