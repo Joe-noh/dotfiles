@@ -47,6 +47,7 @@ NeoBundle 'nanotech/jellybeans.vim'
 NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'tpope/vim-fugitive'
 
+NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'Yggdroot/indentLine'
 NeoBundle 'Townk/vim-autoclose'
 NeoBundle 'mattn/emmet-vim'
@@ -59,6 +60,9 @@ NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'tpope/vim-haml'
 
 call neobundle#end()
+
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0  && !exists("s:std_in") | NERDTree | endif
 
 colorscheme jellybeans
 if &term =~ 'xterm-256color' || 'screen-256color'
