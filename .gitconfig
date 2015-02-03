@@ -2,6 +2,7 @@
 	name = Joe-noh
 	email = goflb.jh@gmail.com
 [core]
+  editor = vim
   excludesFile = ~/.gitignore
 [alias]
   st = status -sb
