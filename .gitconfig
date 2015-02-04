@@ -8,6 +8,7 @@
   st = status -sb
   ci = commit
   co = checkout
+  today = log --since=midnight --author=Joe-noh --oneline
 [url "git@github.com:Joe-noh"]
   pushInsteadOf = https://github.com/Joe-noh
 [url "git@github.com:"]
