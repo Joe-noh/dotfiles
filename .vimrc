@@ -47,6 +47,8 @@ NeoBundle 'nanotech/jellybeans.vim'
 NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'tpope/vim-fugitive'
 
+NeoBundle 'kien/ctrlp.vim'
+NeoBundle 'Shougo/unite.vim'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'Yggdroot/indentLine'
 NeoBundle 'Townk/vim-autoclose'
@@ -60,6 +62,8 @@ NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'tpope/vim-haml'
 
 call neobundle#end()
+
+let g:ctrlp_map = '<c-o>'
 
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0  && !exists("s:std_in") | NERDTree | endif
