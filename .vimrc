@@ -61,6 +61,7 @@ NeoBundle 'elixir-lang/vim-elixir'
 NeoBundle 'heartsentwined/vim-emblem'
 NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'tpope/vim-haml'
+NeoBundle 'mustache/vim-mustache-handlebars'
 
 call neobundle#end()
 
