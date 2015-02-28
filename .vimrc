@@ -50,7 +50,6 @@ NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/vimproc'
-NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'Yggdroot/indentLine'
 NeoBundle 'Townk/vim-autoclose'
 NeoBundle 'mattn/emmet-vim'
@@ -84,9 +83,6 @@ if executable('ag')
   let g:unite_source_grep_default_opts = '--nogroup --nocolor --column'
   let g:unite_source_grep_recursive_opt = ''
 endif
-
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0  && !exists("s:std_in") | NERDTree | endif
 
 let g:user_emmet_expandabbr_key = '<c-e>'
 let g:user_emmet_settings = {
