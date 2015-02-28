@@ -134,6 +134,7 @@ endfunction
 autocmd BufWritePre * call <SID>remove_dust()
 
 inoremap kj <Esc>
+inoremap jk <Esc>
 
 nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
