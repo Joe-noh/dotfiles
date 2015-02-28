@@ -50,7 +50,6 @@ NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/vimproc'
-NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'Yggdroot/indentLine'
 NeoBundle 'Townk/vim-autoclose'
 NeoBundle 'mattn/emmet-vim'
@@ -66,6 +65,10 @@ NeoBundle 'mustache/vim-mustache-handlebars'
 call neobundle#end()
 
 let g:ctrlp_map = '<c-o>'
+let g:ctrlp_custom_ignore = {
+\  'dir':  '\v[\/]\.(git|svn)$',
+\  'file': '\v\.(beam|zip|gz|tar|o)$'
+\}
 
 let g:unite_enable_start_insert = 1
 let g:unite_enable_ignore_case = 1
@@ -80,9 +83,6 @@ if executable('ag')
   let g:unite_source_grep_default_opts = '--nogroup --nocolor --column'
   let g:unite_source_grep_recursive_opt = ''
 endif
-
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0  && !exists("s:std_in") | NERDTree | endif
 
 let g:user_emmet_expandabbr_key = '<c-e>'
 let g:user_emmet_settings = {
@@ -130,6 +130,7 @@ endfunction
 autocmd BufWritePre * call <SID>remove_dust()
 
 inoremap kj <Esc>
+inoremap jk <Esc>
 
 nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
