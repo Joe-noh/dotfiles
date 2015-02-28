@@ -66,6 +66,10 @@ NeoBundle 'mustache/vim-mustache-handlebars'
 call neobundle#end()
 
 let g:ctrlp_map = '<c-o>'
+let g:ctrlp_custom_ignore = {
+\  'dir':  '\v[\/]\.(git|svn)$',
+\  'file': '\v\.(beam|zip|gz|tar|o)$'
+\}
 
 let g:unite_enable_start_insert = 1
 let g:unite_enable_ignore_case = 1
