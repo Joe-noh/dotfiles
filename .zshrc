@@ -18,6 +18,7 @@ unsetopt share_history
 
 alias emacs="emacs -nw"
 alias be="bundle exec"
+alias iem="iex -S mix"
 
 export TERM=xterm-256color
 export GOPATH="$HOME/Workspace"
