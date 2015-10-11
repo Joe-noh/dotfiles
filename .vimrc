@@ -67,7 +67,7 @@ call neobundle#end()
 
 let g:ctrlp_map = '<c-o>'
 let g:ctrlp_custom_ignore = {
-\  'dir':  '\v[\/]\.(git|svn)$',
+\  'dir':  '\v[\/](\.(git|svn))|(deps)$',
 \  'file': '\v\.(beam|zip|gz|tar|o)$'
 \}
 
