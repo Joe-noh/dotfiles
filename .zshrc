@@ -32,6 +32,8 @@ eval "$(rbenv init -)"
 eval "$(exenv init -)"
 . ~/.kerl/18.1/activate
 
+eval "$(direnv hook zsh)"
+
 ssh() {
   tmux rename-window "$*"
   command ssh "$@"
