@@ -24,13 +24,9 @@ export TERM=xterm-256color
 export GOPATH="$HOME/Workspace"
 export PATH="$GOPATH/bin:$PATH"
 export PATH="/usr/local/heroku/bin:$PATH"
-export PATH="$HOME/.rbenv/bin:$PATH"
-export PATH="$HOME/.exenv/bin:$PATH"
-export PATH="$HOME/.nodebrew/current/bin:$PATH"
+export PATH="$HOME/.anyenv/bin:$PATH"
 
-eval "$(rbenv init -)"
-eval "$(exenv init -)"
-. ~/.kerl/18.1/activate
+eval "$(anyenv init -)"
 
 eval "$(direnv hook zsh)"
 
@@ -67,4 +63,3 @@ function peco-src () {
 }
 zle -N peco-src
 bindkey '^]' peco-src
-
