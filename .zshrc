@@ -22,6 +22,7 @@ alias iem="iex -S mix"
 
 export TERM=xterm-256color
 export GOPATH="$HOME/Workspace"
+export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$GOPATH/bin:$PATH"
 export PATH="/usr/local/heroku/bin:$PATH"
 export PATH="$HOME/.anyenv/bin:$PATH"
