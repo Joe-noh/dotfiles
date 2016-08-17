@@ -16,7 +16,6 @@ setopt no_correct
 
 unsetopt share_history
 
-alias emacs="emacs -nw"
 alias be="bundle exec"
 alias iem="iex -S mix"
 
