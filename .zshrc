@@ -28,6 +28,9 @@ export PATH="$HOME/.anyenv/bin:$PATH"
 
 eval "$(anyenv init -)"
 
+source "$HOME/.evm/scripts/evm"
+test -s "$HOME/.kiex/scripts/kiex" && source "$HOME/.kiex/scripts/kiex"
+
 eval "$(direnv hook zsh)"
 
 ssh() {
