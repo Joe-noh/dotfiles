@@ -10,17 +10,19 @@ os = opts["os"]
 raise "Give --os option" unless os
 raise unless Dir.exists?(os)
 
-entries = %w[
+os_specifics = %w[
   zshrc
+].map{|e| File.join(Dir.pwd, os, e) }
+
+commons =%w[
   tmux.conf
   gitignore
   gitconfig
   vimrc
-]
+].map{|e| File.join(Dir.pwd, "common", e) }
 
-entries.each do |entry|
-  source = File.join(Dir.pwd, os, entry)
-  target = File.join(Dir.home, ".#{entry}")
+(os_specifics + commons).each do |source|
+  target = File.join(Dir.home, "." + File.basename(source))
 
   puts "create symlink: #{source} -> #{target}"
 
