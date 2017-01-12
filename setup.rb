@@ -16,7 +16,6 @@ entries = %w[
   gitignore
   gitconfig
   vimrc
-  spacemacs
 ]
 
 entries.each do |entry|
