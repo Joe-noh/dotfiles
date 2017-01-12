@@ -1,0 +1,20 @@
+zstyle ':prezto:*:*' color 'yes'
+
+zstyle ':prezto:load' pmodule \
+  'environment' \
+  'terminal' \
+  'history' \
+  'spectrum' \
+  'utility' \
+  'completion' \
+  'prompt' \
+  'archive' \
+  'git' \
+  'ruby' \
+  'rails' \
+  'bundler' \
+  'homebrew' \
+  'syntax-highlighting' \
+  'ssh'
+
+zstyle ':prezto:module:prompt' theme 'steeef'
