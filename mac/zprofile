@@ -5,6 +5,7 @@ setopt hist_ignore_all_dups
 
 alias be="bundle exec"
 alias iem="iex -S mix"
+alias gito="git-open"
 
 export TERM=xterm-256color
 export GOPATH="$HOME/Workspace"
@@ -19,6 +20,18 @@ source /Users/joe/.evm/scripts/evm
 test -s "$HOME/.kiex/scripts/kiex" && source "$HOME/.kiex/scripts/kiex"
 
 eval "$(direnv hook zsh)"
+
+function git-open() {
+  if git remote > /dev/null; then
+    local open_command
+    if which open > /dev/null; then
+      open_command="open"
+    else
+      open_command="xdg-open"
+    fi
+    print -z "$open_command $(git remote get-url origin)"
+  fi
+}
 
 function fzf-select-history() {
   local tac
