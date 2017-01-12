@@ -20,28 +20,27 @@ test -s "$HOME/.kiex/scripts/kiex" && source "$HOME/.kiex/scripts/kiex"
 
 eval "$(direnv hook zsh)"
 
-# zsh functions for ghq/peco
-function peco-select-history() {
+function fzf-select-history() {
   local tac
   if which tac > /dev/null; then
     tac="tac"
   else
     tac="tail -r"
   fi
-  BUFFER=$(fc -l -n 1 | eval $tac | peco --query "$LBUFFER")
+  BUFFER=$(fc -l -n 1 | eval $tac | fzf)
   CURSOR=$#BUFFER
   zle clear-screen
 }
-zle -N peco-select-history
-bindkey '^r' peco-select-history
+zle -N fzf-select-history
+bindkey '^r' fzf-select-history
 
-function peco-src () {
-  local selected_dir=$(ghq list -p | peco --query "$LBUFFER")
+function fzf-src () {
+  local selected_dir=$(ghq list -p | fzf)
   if [ -n "$selected_dir" ]; then
     BUFFER="cd ${selected_dir}"
     zle accept-line
   fi
   zle clear-screen
 }
-zle -N peco-src
-bindkey '^]' peco-src
+zle -N fzf-src
+bindkey '^]' fzf-src
