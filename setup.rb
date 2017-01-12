@@ -11,7 +11,8 @@ raise "Give --os option" unless os
 raise unless Dir.exists?(os)
 
 os_specifics = %w[
-  zshrc
+  zpreztorc
+  zprofile
 ].map{|e| File.join(Dir.pwd, os, e) }
 
 commons =%w[
