@@ -8,6 +8,7 @@
   st = status -sb
   ci = commit
   co = checkout
+  ci-wip = commit --allow-empty -m '[WIP]'
   today = log --since=midnight --author=Joe-noh --oneline
 [url "git@github.com:Joe-noh"]
   pushInsteadOf = https://github.com/Joe-noh
