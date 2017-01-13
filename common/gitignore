@@ -1,10 +1,11 @@
 *~
 \#*#
 
-*.iml
 .idea
+*.iml
 
 .DS_Store
 .envrc
 
 erl_crash.dump
+npm-debug.log
