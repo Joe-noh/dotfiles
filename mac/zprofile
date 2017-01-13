@@ -1,3 +1,11 @@
+function if-command-exists() {
+  return $(command $1 &> /dev/null)
+}
+
+function if-file-exists() {
+  return $(type $1 &> /dev/null)
+}
+
 setopt EXTENDED_GLOB
 setopt no_beep
 setopt no_correct
@@ -14,12 +22,11 @@ export PATH="$GOPATH/bin:$PATH"
 export PATH="/usr/local/heroku/bin:$PATH"
 export PATH="$HOME/.anyenv/bin:$PATH"
 
-eval "$(anyenv init -)"
+if-command-exists "anyenv" && eval "$(anyenv init -)"
+if-file-exists "$HOME/.evm/scripts/evm" && source "$HOME/.evm/scripts/evm"
+if-file-exists "$HOME/.kiex/scripts/kiex" && source "$HOME/.kiex/scripts/kiex"
 
-source /Users/joe/.evm/scripts/evm
-test -s "$HOME/.kiex/scripts/kiex" && source "$HOME/.kiex/scripts/kiex"
-
-eval "$(direnv hook zsh)"
+if-command-exists "direnv" && eval "$(direnv hook zsh)"
 
 function git-open() {
   if git remote > /dev/null; then
