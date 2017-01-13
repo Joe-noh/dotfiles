@@ -1,0 +1,66 @@
+function if-command-exists() {
+  return $(command $1 &> /dev/null)
+}
+
+function if-file-exists() {
+  return $(type $1 &> /dev/null)
+}
+
+setopt EXTENDED_GLOB
+setopt no_beep
+setopt no_correct
+setopt hist_ignore_all_dups
+
+alias be="bundle exec"
+alias iem="iex -S mix"
+alias gito="git-open"
+
+export TERM=xterm-256color
+export GOPATH="$HOME/Workspace"
+export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="$GOPATH/bin:$PATH"
+export PATH="/usr/local/heroku/bin:$PATH"
+export PATH="$HOME/.anyenv/bin:$PATH"
+
+if-command-exists "anyenv" && eval "$(anyenv init -)"
+if-file-exists "$HOME/.evm/scripts/evm" && source "$HOME/.evm/scripts/evm"
+if-file-exists "$HOME/.kiex/scripts/kiex" && source "$HOME/.kiex/scripts/kiex"
+
+if-command-exists "direnv" && eval "$(direnv hook zsh)"
+
+function git-open() {
+  if git remote > /dev/null; then
+    local open_command
+    if which open > /dev/null; then
+      open_command="open"
+    else
+      open_command="xdg-open"
+    fi
+    print -z "$open_command $(git remote get-url origin)"
+  fi
+}
+
+function fzf-select-history() {
+  local tac
+  if which tac > /dev/null; then
+    tac="tac"
+  else
+    tac="tail -r"
+  fi
+  BUFFER=$(fc -l -n 1 | eval $tac | fzf)
+  CURSOR=$#BUFFER
+  zle clear-screen
+}
+zle -N fzf-select-history
+bindkey '^r' fzf-select-history
+
+function fzf-src () {
+  local selected_dir=$(ghq list -p | fzf)
+  if [ -n "$selected_dir" ]; then
+    BUFFER="cd ${selected_dir}"
+    zle accept-line
+  fi
+  zle clear-screen
+}
+zle -N fzf-src
+bindkey '^]' fzf-src
