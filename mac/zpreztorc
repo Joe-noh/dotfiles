@@ -16,4 +16,5 @@ zstyle ':prezto:load' pmodule \
   'syntax-highlighting' \
   'ssh'
 
+zstyle ':prezto:module:terminal' auto-title 'true'
 zstyle ':prezto:module:prompt' theme 'steeef'
