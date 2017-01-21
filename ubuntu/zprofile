@@ -22,7 +22,7 @@ export PATH="$GOPATH/bin:$PATH"
 export PATH="/usr/local/heroku/bin:$PATH"
 export PATH="$HOME/.anyenv/bin:$PATH"
 
-if-command-exists "anyenv" && eval "$(anyenv init -)"
+if-command-exists "anyenv" && eval "$(anyenv init - zsh)"
 if-file-exists "$HOME/.evm/scripts/evm" && source "$HOME/.evm/scripts/evm"
 if-file-exists "$HOME/.kiex/scripts/kiex" && source "$HOME/.kiex/scripts/kiex"
 
