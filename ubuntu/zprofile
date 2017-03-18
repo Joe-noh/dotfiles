@@ -7,9 +7,9 @@ function if-file-exists() {
 }
 
 setopt EXTENDED_GLOB
-setopt no_beep
-setopt no_correct
 setopt hist_ignore_all_dups
+unsetopt beep
+unsetopt correct
 
 alias be="bundle exec"
 alias iem="iex -S mix"
@@ -21,6 +21,10 @@ export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$GOPATH/bin:$PATH"
 export PATH="/usr/local/heroku/bin:$PATH"
 export PATH="$HOME/.anyenv/bin:$PATH"
+
+export ANDROID_HOME=${HOME}/Android/Sdk
+export PATH=${PATH}:${ANDROID_HOME}/tools
+export PATH=${PATH}:${ANDROID_HOME}/platform-tools
 
 if-command-exists "anyenv" && eval "$(anyenv init - zsh)"
 if-file-exists "$HOME/.evm/scripts/evm" && source "$HOME/.evm/scripts/evm"

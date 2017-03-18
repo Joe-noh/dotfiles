@@ -7,9 +7,9 @@ function if-file-exists() {
 }
 
 setopt EXTENDED_GLOB
-setopt no_beep
-setopt no_correct
 setopt hist_ignore_all_dups
+unsetopt beep
+unsetopt correct
 
 alias be="bundle exec"
 alias iem="iex -S mix"
