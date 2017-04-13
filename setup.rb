@@ -20,6 +20,7 @@ commons =%w[
   gitignore
   gitconfig
   vimrc
+  gemrc
 ].map{|e| File.join(Dir.pwd, "common", e) }
 
 (os_specifics + commons).each do |source|
