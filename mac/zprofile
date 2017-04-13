@@ -6,6 +6,9 @@ function if-file-exists() {
   return $(type $1 &> /dev/null)
 }
 
+autoload -Uz compinit
+compinit
+
 setopt EXTENDED_GLOB
 setopt hist_ignore_all_dups
 unsetopt beep
