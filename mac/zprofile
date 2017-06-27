@@ -14,6 +14,8 @@ setopt hist_ignore_all_dups
 unsetopt beep
 unsetopt correct
 
+alias nr="npm run"
+alias dc="docker-compose"
 alias be="bundle exec"
 alias iem="iex -S mix"
 alias gito="git-open"
