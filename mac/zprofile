@@ -27,8 +27,8 @@ export PATH="$GOPATH/bin:$PATH"
 export PATH="/usr/local/heroku/bin:$PATH"
 export PATH="$HOME/.anyenv/bin:$PATH"
 
-. $HOME/.asdf/asdf.sh
-. $HOME/.asdf/completions/asdf.bash
+if-file-exists "$HOME/.asdf/asdf.sh" && . $HOME/.asdf/asdf.sh
+if-file-exists "$HOME/.asdf/completions/asdf.bash" && . $HOME/.asdf/completions/asdf.bash
 
 if-command-exists "anyenv" && eval "$(anyenv init -)"
 if-file-exists "$HOME/.evm/scripts/evm" && source "$HOME/.evm/scripts/evm"
