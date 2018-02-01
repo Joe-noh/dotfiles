@@ -21,6 +21,7 @@ alias iem="iex -S mix"
 alias gito="git-open"
 
 export TERM=xterm-256color
+export ERL_AFLAGS="-kernel shell_history enabled"
 export GOPATH="$HOME/Workspace"
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$GOPATH/bin:$PATH"
