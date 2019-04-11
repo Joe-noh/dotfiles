@@ -16,6 +16,7 @@ unsetopt correct
 
 alias nr="npm run"
 alias dc="docker-compose"
+alias dcrc="docker-compose run --rm app rails c"
 alias be="bundle exec"
 alias iem="iex -S mix"
 alias gito="git-open"
