@@ -1,9 +1,10 @@
 ## dotfiles
 
+🏠 Managed with [chezmoi](https://github.com/twpayne/chezmoi).
+
 ### setup
 
-create symlinks to current user's home.
-
 ```console
-$ ./setup.rb --os=mac  # mac or ubuntu
+$ chezmoi init https://github.com/Joe-noh/dotfiles
+$ chezmoi update
 ```
