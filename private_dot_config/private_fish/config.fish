@@ -4,8 +4,11 @@ set PATH $HOME/.anyenv/bin $PATH
 set PATH /usr/local/opt/python@3.9/libexec/bin $PATH
 set ERL_AFLAGS "-kernel shell_history enabled"
 set KERL_BUILD_DOCS "yes"
+
 alias k=kubectl
 alias gfm='git pull'
 alias iem='iex -S mix'
 alias dc='docker-compose'
+
+starship init fish | source
 source ~/.asdf/asdf.fish
