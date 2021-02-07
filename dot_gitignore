@@ -1,0 +1,12 @@
+*~
+\#*#
+
+.idea
+*.iml
+.vscode
+
+.DS_Store
+.envrc
+
+erl_crash.dump
+npm-debug.log
