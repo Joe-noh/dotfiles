@@ -9,6 +9,7 @@ alias k=kubectl
 alias gfm='git pull'
 alias iem='iex -S mix'
 alias dc='docker-compose'
+alias be='bundle exec'
 
 starship init fish | source
 source ~/.asdf/asdf.fish
