@@ -1,5 +1,6 @@
 set GOPATH $HOME/Workspace
 set PATH $GOPATH/bin $PATH
+set PATH /opt/homebrew/bin $PATH
 set PATH $HOME/.anyenv/bin $PATH
 set PATH /usr/local/opt/python@3.9/libexec/bin $PATH
 set ERL_AFLAGS "-kernel shell_history enabled"
