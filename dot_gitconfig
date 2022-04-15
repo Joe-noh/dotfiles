@@ -28,4 +28,4 @@
 	smudge = git media smudge %f
 	required = true
 [pull]
-  rebase = false
+	rebase = false
