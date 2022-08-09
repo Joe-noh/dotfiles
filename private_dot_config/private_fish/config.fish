@@ -13,4 +13,4 @@ alias dc='docker-compose'
 alias be='bundle exec'
 
 starship init fish | source
-source /usr/local/opt/asdf/asdf.fish
+source /opt/homebrew/opt/asdf/asdf.fish
