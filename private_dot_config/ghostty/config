@@ -1,0 +1,7 @@
+command = /opt/homebrew/bin/fish --login --interactive
+shell-integration = fish
+
+theme = Ayu
+
+font-size = 12
+font-feature = -calt, -liga, -dlig
